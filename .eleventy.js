@@ -3,6 +3,7 @@ const { minify } = require("terser");
 const metagen = require("eleventy-plugin-metagen");
 const eleventyNavigation = require("@11ty/eleventy-navigation");
 const Image = require("@11ty/eleventy-img");
+const htmlmin = require("html-minifier");
 
 module.exports = (eleventyConfig) => {
 
@@ -97,6 +98,21 @@ module.exports = (eleventyConfig) => {
 
     return `<picture>\n\t${sources}\n\t${img}</picture>`;
   });
+
+  eleventyConfig.addTransform("htmlmin", function (content) {
+		if ((this.page.outputPath || "").endsWith(".html")) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true,
+			});
+
+			return minified;
+		}
+
+		// If not an HTML output, return content as-is
+		return content;
+	});
 
   return {
     dir: {

@@ -1,0 +1,11 @@
+{% set navigation = collections.all | eleventyNavigation %}
+<header class="header">
+    <nav class="nav">
+        <a aria-current="page" class="nav__logo" href="/">{{ site.author.firstName }} {{ site.author.lastName }}</a>
+        <ul class="nav__list">
+            {% for link in navigation %}
+                <li class="nav__item"><a href="{{ link.url | url }}" class="nav__link{% if link.url == page.url %} nav__link--current{% endif %}">{{ link.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+</header>

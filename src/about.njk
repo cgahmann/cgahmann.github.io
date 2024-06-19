@@ -1,39 +1,23 @@
 ---
-title: About - Eleventy Photo Gallery
-meta_desc: A page about John Smith, and photography. This template is currently the default version so add your own about me page info here.
-url: https://eleventy-gallery.netlify.app/about
-img: /images/terrace-window.jpg
-alt: Terrace outside shop window with green plants and pink tree on night street
-eleventyNavigation:
-  key: About
-  order: 2
-heading: About
-permalink: "/about/"
 layout: main.njk
+title: Christoph Gahmann | Fotograf in Frankfurt am Main - Porträt-, Hochzeits-, Familien- &amp; Newborn-Fotografie
+meta_desc: Fotograf in Frankfurt am Main spezialisiert auf Porträt-, Hochzeits-, Familien- und Newborn-Fotografie. Natürliche und authentische Momente einfangen. Jetzt Kontakt aufnehmen für individuelle Fotoprojekte.
+eleventyNavigation:
+  key: Privat
+  order: 1
+permalink: "/privat/"
 ---
 
-<div class="about-me-content">
-  <h1>{{ heading }}</h1>
-  <p>Hi, I'm {{ site.author.firstName }} {{ site.author.lastName}}. I'm a novice photography and designer. This website acts as a compendium of images I've taken over the years.</p>
-  <p>This is mock text, write whatever you'd like for the about me page. Maybe add a picture or some of your recent work!</p>
-  <p>You can find me around the web at the following places:</p>
-
-  <ul class="about-socials">
-    {% for key, value in site.socials %}
-      <li><a href="{{ value }}">{{ key | title }}</a></li>
-    {% endfor %}
-  </ul>
-
-  <h2 id="contact-me">Contact</h2>
-  <p>Feel free to reach out to me by email or on social media. I usually take 24-48hrs to respond. If you think my work aligns with your projects needs, I'd love to hear from you!</p>
-  
-  <form class="contact-form" onsubmit="sendMail()">
-      <label for="name">What's Your Name?</label>
-      <input type="text" name="name" id="name" required>
-      <label class="form-label" for="subject">Subject</label>
-      <input class="email-subject" type="text" name="subject" id="subject" required>
-      <label class="form-label" for="message">Message</label>
-      <textarea class="email-msg" rows="5" cols="30" name="message" id="message" required></textarea>
-      <button type="submit" class="reach-me button submit-contact">Message me</button>
-  </form>
-</div>
+<article class="content">
+  <div class="image-wrapper">
+    {% img
+      src="/ich-2021.jpg",
+      alt="Portrait von Christoph",
+      sizes="(min-width: 600px) 50vw, (min-width: 800px) 100vw, 33.3vw"
+    %}
+  </div>
+  <h1>Hi, ich bin Christoph.</h1>
+  <p>Als Fotograf aus Frankfurt am Main habe ich mich auf Porträt-, Hochzeits-, Familien- und Reisefotografie spezialisiert. Mein Augenmerk liegt darauf, natürliche und authentische Momente einzufangen. Ich möchte Augenblicke so festhalten, wie sie sind – ohne inszenierte oder künstliche Wirkung. Besonders liebe ich die analoge Welt der Fotografie, die es mir ermöglicht, die Schönheit echter Augenblicke noch intensiver zu erleben.</p>
+  <p>Ich lebe mit meiner Familie in Frankfurt Sachsenhausen, einem Viertel mit urigen Kneipen, vielfältiger Architektur und dem angrenzenden Stadtwald, der durch seine unberührte Natur besticht. Diese Natur inspiriert und erdet mich.</p>
+  <p>Darüber hinaus liebe ich das Meer, stürmisches Wetter, gutes Kino und amerikanisches Mid-century Design.</p>
+</article>

@@ -91,9 +91,7 @@ module.exports = (eleventyConfig) => {
         alt="${alt}"
         loading="lazy"
         decoding="async"
-        class="${className || ''}"
-        width="${width || ''}"
-        height="${height || ''}"
+        ${className ? `class="${className}"` : ''}
       >`;
 
     return `<picture>\n\t${sources}\n\t${img}</picture>`;

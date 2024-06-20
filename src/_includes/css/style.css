@@ -64,10 +64,6 @@ p:last-child {
 	margin-bottom: 0
 }
 
-.grid {
-	padding: var(--cg-padding);
-}
-
 @keyframes fadein {
 	0% {
 		opacity: 0;
@@ -98,11 +94,11 @@ h3 {
 	margin-bottom: .8rem
 }
 
-.content h3 {
+article h3 {
 	margin-top: 2.5rem
 }
 
-.content {
+article {
 	background-color: var(--cg-gray-light);
 	overflow-wrap: break-word;
 	padding: var(--cg-padding);
@@ -124,7 +120,7 @@ ul {
     padding-left: 2rem;
 }
 
-.content .image-wrapper {
+article .image-wrapper {
 	margin-bottom: 2rem;
 	max-width: 300px;
 }
@@ -136,18 +132,15 @@ ul {
 	padding: var(--cg-padding-grid);
 }
 
-.footer {
+footer {
 	display: flex;
+	padding: var(--cg-padding);
 }
 
-.header {
+header {
 	background-color: var(--cg-gray-light);
 	display: flex;
 	padding: var(--cg-padding-header);
-}
-
-.header-nav {
-	margin-left: auto
 }
 
 .nav {
@@ -155,10 +148,6 @@ ul {
 	justify-content: space-between;
 	width: 100%;
 }
-
-.footer .nav {
-    margin-left: initial;
-} 
 
 .nav__list {
 	display: flex;
